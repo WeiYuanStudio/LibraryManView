@@ -1,8 +1,10 @@
 <template>
   <div id="page-frame">
     <div id="main-frame">
-      <div>CTX</div>
-      <SearchBar holder-info="test"></SearchBar>
+      <div id="logo-l">
+        Library Man
+      </div>
+      <SearchBar></SearchBar>
     </div>
     <div id="bottom-bar">
       <div id="home" class="bar-item">
@@ -35,6 +37,14 @@ export default {
 };
 </script>
 <style scoped>
+
+#logo-l {
+  margin-top: 20vh;
+  margin-bottom: 5vh;
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
 #main-frame {
   flex: 1;
 }
@@ -42,7 +52,6 @@ export default {
 .bar-item {
   align-items: center;
   line-height: 1rem;
-  /* border: solid 1px black; */
   margin: auto;
   margin-bottom: 0px;
   display: flex;
@@ -66,6 +75,5 @@ export default {
 #page-frame {
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 </style>
