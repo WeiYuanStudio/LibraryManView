@@ -8,9 +8,9 @@
       <font-awesome-icon icon="star" size="lg"></font-awesome-icon>
       <span>Discover</span>
     </router-link>
-    <router-link to='./booklist' id="book-list" class="bar-item">
+    <router-link to='./favorite' id="favorite" class="bar-item">
       <font-awesome-icon icon="book" size="lg"></font-awesome-icon>
-      <span>Book List</span>
+      <span>Favorite</span>
     </router-link>
     <router-link to='./user' id="user" class="bar-item">
       <font-awesome-icon icon="user" size="lg"></font-awesome-icon>
@@ -69,7 +69,7 @@ a {
     text-decoration: none;
 }
 
-:link {
+a {
   color: #000;
 }
 </style>
