@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <PageFrame></PageFrame>
+    <router-view/>
+    <BarBottom/>
   </div>
 </template>
 
 <script>
-import PageFrame from './components/PageFrame.vue'
-
+import BarBottom from './components/BarBottom'
 export default {
   name: 'app',
   components: {
-    PageFrame
+    BarBottom
   }
 }
 </script>
