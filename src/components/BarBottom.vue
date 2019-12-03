@@ -1,18 +1,18 @@
 <template>
   <div id="bottom-bar">
-    <router-link to='./' id="home" class="bar-item">
+    <router-link to='/' id="home" class="bar-item">
       <font-awesome-icon icon="home" size="lg"></font-awesome-icon>
       <span>Home</span>
     </router-link>
-    <router-link to='./discover' id="discover" class="bar-item">
+    <router-link to='/discover' id="discover" class="bar-item">
       <font-awesome-icon icon="star" size="lg"></font-awesome-icon>
       <span>Discover</span>
     </router-link>
-    <router-link to='./favorite' id="favorite" class="bar-item">
+    <router-link to='/favorite' id="favorite" class="bar-item">
       <font-awesome-icon icon="book" size="lg"></font-awesome-icon>
       <span>Favorite</span>
     </router-link>
-    <router-link to='./user' id="user" class="bar-item">
+    <router-link to='/user' id="user" class="bar-item">
       <font-awesome-icon icon="user" size="lg"></font-awesome-icon>
       <span>User</span>
     </router-link>
@@ -47,6 +47,7 @@
 }
 
 #bottom-bar {
+  background-color: white;
   border-top: solid 1px gray;
   position: fixed;
   width: 100%;
