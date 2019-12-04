@@ -9,7 +9,6 @@
 
 <script>
 import axios from 'axios';
-import conf from '@/dev-config'
 
 export default {
     name: "search-bar",
@@ -22,14 +21,16 @@ export default {
     methods: {
         update_motto() {
             axios
-                .get(conf.api_path() + '/api/motto')
+                .get('/api/motto')
                 .then(response => (this.holder_info = response.data));
         },
         search_book() {
-            this.$router.push({
-                path: './books',
-                query: { title: this.title }
-            });
+            if (this.title) {
+                this.$router.push({
+                    path: './books',
+                    query: { title: this.title }
+                });
+            }
         }
     },
     mounted() {
