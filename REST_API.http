@@ -1,0 +1,42 @@
+### VS Code Plugin RESTClient, Refer to https://github.com/Huachao/vscode-restclient
+
+@api_path = http://127.0.0.1:5000/api
+### Get a random motto
+GET {{api_path}}/motto HTTP/1.1
+
+RETURN
+```
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 41
+Server: Werkzeug/0.16.0 Python/3.8.0
+Date: Wed, 04 Dec 2019 06:35:57 GMT
+
+"Books are the ladder of human progress"
+```
+
+
+### Query books list by title
+
+GET {{api_path}}/books?title=
+
+RETURN
+```
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 2641
+Server: Werkzeug/0.16.0 Python/3.8.0
+Date: Wed, 04 Dec 2019 06:40:29 GMT
+
+[
+    {
+        "isbn": "9780321714114",
+        "title": "C++ Primer",
+        "publisher": "Addison-Wesley Professional",
+        "author": "Stanley B. Lippman",
+        "publish_date": "2012-08-01",
+        "cover_img": "https://images-na.ssl-images-amazon.com/images/I/41ArJlUM%2B2L._SL200_.jpg",
+        "intro": "Test"
+  },
+]
+```
