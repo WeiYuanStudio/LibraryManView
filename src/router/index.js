@@ -7,6 +7,7 @@ import PageFavorite from '@/components/PageFavorite'
 import User from '@/components/PageUser'
 
 import PageSearch from '@/components/PageSearch'
+import PageLogin from '@/components/PageLogin'
 
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export default new Router({
         { path: '/discover', component: Discover },
         { path: '/favorite', component: PageFavorite },
         { path: '/user', component: User },
-        { path: '/books', component: PageSearch }
+        { path: '/books', component: PageSearch },
+        { path: '/login', component: PageLogin}
     ]
 })
