@@ -38,7 +38,7 @@ export default {
             this.$router.push({ path: "/" });
         }
         axios
-            .get(('api/books'), {params: {title: query_title}})
+            .get(('/api/books'), {params: {title: query_title}})
             .then(response => (this.books = response.data))
     }
 };
@@ -90,6 +90,7 @@ ul {
     list-style-position: unset;
     list-style: none;
     padding: 0px;
+    margin: 0px;
     margin-bottom: 3rem;
 }
 </style>
