@@ -1,5 +1,6 @@
 <template>
     <div id="login-panel">
+    <div id="logo-l">Library Man</div>
         <table>
             <tr>
                 <td>Username:</td>
@@ -14,7 +15,10 @@
                 </td>
             </tr>
         </table>
-        <button v-on:click="login">Log in</button>
+        <div>
+            <button v-on:click="register">Register</button>
+            <button v-on:click="login">Log in</button>
+        </div>
     </div>
 </template>
 <script>
@@ -37,8 +41,12 @@ export default {
                     password: this.password
                 }
             }).then(function(response) {
-                document.cookie = response.data; //Fix cookie set
-            });
+                document.cookie = 'session=' + response.data; //Fix cookie set
+                this.$router.push('/user');
+            }.bind(this));
+        },
+        register() {
+            window.alert('In progress');
         }
     }
 };
@@ -47,7 +55,25 @@ export default {
 #login-panel {
     display: flex;
     flex-flow: column;
+}
 
+#logo-l {
+  margin-top: 20vh;
+  margin-bottom: 5vh;
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
+#login-panel td {
+    padding: 5px 10px;
+}
+
+#login-panel input {
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: solid 2px gray;
+    margin: 5px;
+    -webkit-appearance: none;
 }
 
 #login-panel table {
@@ -57,6 +83,9 @@ export default {
 
 #login-panel button {
     width: 20vw;
-    margin: auto;
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: solid 2px gray;
+    margin: 10px 20px;
 }
 </style>

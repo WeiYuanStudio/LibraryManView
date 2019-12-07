@@ -1,7 +1,9 @@
 <template>
     <div>
         <div v-if="userinfo == null" id="infobar">
-            Plese Login
+            <div v-on:click="to_login">
+                <h1>Click to log in</h1>
+            </div>
         </div>
         <div v-else id="infobar">
             <img id="avatar" v-bind:src="userinfo.avatar"/>
@@ -26,6 +28,9 @@ export default {
             axios
                 .get('/api/userinfo')
                 .then((response) => (this.userinfo = response.data))
+        },
+        to_login() {
+            this.$router.push('/login')
         }
     },
     beforeMount() {
@@ -41,6 +46,10 @@ export default {
     flex-direction: row;
     border-top: solid 1px gray;
     border-bottom: solid 1px gray;
+}
+
+h1 {
+    width: 100vw;
 }
 
 #userinfobar div {
