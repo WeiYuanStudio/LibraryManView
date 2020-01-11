@@ -43,7 +43,10 @@ export default {
             }).then(function(response) {
                 document.cookie = 'session=' + response.data; //Fix cookie set
                 this.$router.push('/user');
-            }.bind(this));
+            }.bind(this)).catch(function (error) {
+                window.console.log(error)
+                window.alert('Login Failed');
+            });
         },
         register() {
             window.alert('In progress');
