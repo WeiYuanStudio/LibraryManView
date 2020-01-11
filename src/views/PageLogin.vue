@@ -1,6 +1,6 @@
 <template>
     <div>
-    <div id="logo-l">Library Man</div>
+        <LogoBig />
         <el-row type="flex" class="row-bg" justify="center" id="login-input">
             <el-col :span="16">
                 <el-input placeholder="User Name" v-model="username"></el-input>
@@ -15,8 +15,12 @@
 </template>
 <script>
 import axios from "axios";
+import LogoBig from '@/components/LogoBig';
 
 export default {
+    components: {
+        LogoBig
+    },
     data: function() {
         return {
             username: "",
@@ -51,13 +55,6 @@ export default {
     display: flex;
     flex-flow: column;
     width: 80%;
-}
-
-#logo-l {
-    margin-top: 20vh;
-    margin-bottom: 5vh;
-    font-size: 3.5rem;
-    font-weight: 500;
 }
 
 #login-input * {

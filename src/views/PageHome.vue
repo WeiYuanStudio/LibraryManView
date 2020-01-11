@@ -1,24 +1,17 @@
 <template>
-  <div id="page-frame">
-    <div id="logo-l">Library Man</div>
-    <SearchBar></SearchBar>
-  </div>
+    <div id="page-frame">
+        <LogoBig />
+        <SearchBar />
+    </div>
 </template>
 
 <script>
 import SearchBar from '@/components/SearchBar'
+import LogoBig from '@/components/LogoBig'
 export default {
-  components: {
-    SearchBar
-  }
+    components: {
+        SearchBar,
+        LogoBig
+    }
 };
 </script>
-
-<style scoped>
-#logo-l {
-  margin-top: 20vh;
-  margin-bottom: 5vh;
-  font-size: 3.5rem;
-  font-weight: 500;
-}
-</style>
