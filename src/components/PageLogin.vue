@@ -1,24 +1,16 @@
 <template>
-    <div id="login-panel">
+    <div>
     <div id="logo-l">Library Man</div>
-        <table>
-            <tr>
-                <td>Username:</td>
-                <td>
-                    <input type="username" v-model="username" />
-                </td>
-            </tr>
-            <tr>
-                <td>Password:</td>
-                <td>
-                    <input type="password" v-model="password" />
-                </td>
-            </tr>
-        </table>
-        <div>
-            <button v-on:click="register">Register</button>
-            <button v-on:click="login">Log in</button>
-        </div>
+        <el-row type="flex" class="row-bg" justify="center" id="login-input">
+            <el-col :span="16">
+                <el-input placeholder="User Name" v-model="username"></el-input>
+                <el-input placeholder="Password" v-model="password" show-password></el-input>
+            </el-col>
+        </el-row>
+        <el-row type="flex" class="row-bg" justify="center" id="login-button">
+                <el-button v-on:click="register">Register</el-button>
+                <el-button type="primary" v-on:click="login">Log in</el-button>
+        </el-row>
     </div>
 </template>
 <script>
@@ -58,37 +50,21 @@ export default {
 #login-panel {
     display: flex;
     flex-flow: column;
+    width: 80%;
 }
 
 #logo-l {
-  margin-top: 20vh;
-  margin-bottom: 5vh;
-  font-size: 3.5rem;
-  font-weight: 500;
+    margin-top: 20vh;
+    margin-bottom: 5vh;
+    font-size: 3.5rem;
+    font-weight: 500;
 }
 
-#login-panel td {
-    padding: 5px 10px;
+#login-input * {
+    margin: 5px 0px;
 }
 
-#login-panel input {
-    padding: 10px 5px;
-    border-radius: 5px;
-    border: solid 2px gray;
-    margin: 5px;
-    -webkit-appearance: none;
-}
-
-#login-panel table {
-    width: 50vw;
-    margin: auto;
-}
-
-#login-panel button {
-    width: 20vw;
-    padding: 10px 5px;
-    border-radius: 5px;
-    border: solid 2px gray;
-    margin: 10px 20px;
+#login-button * {
+    margin: 2vh 5vw;
 }
 </style>

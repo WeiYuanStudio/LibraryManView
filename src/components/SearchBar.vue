@@ -1,9 +1,9 @@
 <template>
     <div id="search-bar">
-        <form id="query-panel">
-            <input id="query-input" type="text" v-bind:placeholder="holder_info" v-model="title" />
-            <input id="query-submit" type="submit" value="Search" v-on:click="search_book" />
-        </form>
+        <el-col :span="19">
+            <el-input v-bind:placeholder="holder_info" type="text" v-model="title" id="query-input" />
+        </el-col>
+        <el-button type="primary" icon="el-icon-search" v-on:click="search_book" />
     </div>
 </template>
 
@@ -39,21 +39,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-$base-width: 0.8; //搜索框总长度
-
-input {
-    padding: 10px 5px;
-    border-radius: 5px;
-    border: solid 2px gray;
-    margin: 5px;
-    -webkit-appearance: none;
-}
-
-#query-input {
-    width: 80% * $base-width;
-}
-
-#query-submit {
-    width: 20% * $base-width;
+#search-bar {
+    margin: 5%;
 }
 </style>

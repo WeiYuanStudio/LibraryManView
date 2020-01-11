@@ -1,9 +1,8 @@
 <template>
     <div>
         <div v-if="userinfo == null" id="infobar">
-            <div v-on:click="to_login">
-                <h1>Click to log in</h1>
-            </div>
+            <el-alert title="You are not logged in yet !" type="warning" close-text="Go login" @close="to_login">
+            </el-alert>
         </div>
         <div v-else id="infobar">
             <img id="avatar" v-bind:src="userinfo.avatar"/>
@@ -40,18 +39,6 @@ export default {
 </script>
 
 <style scoped>
-
-#infobar {
-    display: flex;
-    flex-direction: row;
-    border-top: solid 1px gray;
-    border-bottom: solid 1px gray;
-}
-
-h1 {
-    width: 100vw;
-}
-
 #userinfobar div {
     margin-bottom: 10px;
 }
