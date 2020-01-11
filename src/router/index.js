@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import PageHome from '@/components/PageHome'
-import Discover from '@/components/PageDiscover'
-import PageFavorite from '@/components/PageFavorite'
-import User from '@/components/PageUser'
+import PageHome from '@/views/PageHome'
+import Discover from '@/views/PageDiscover'
+import PageFavorite from '@/views/PageFavorite'
+import User from '@/views/PageUser'
 
-import PageSearch from '@/components/PageSearch'
-import PageLogin from '@/components/PageLogin'
+import PageSearch from '@/views/PageSearch'
+import PageLogin from '@/views/PageLogin'
 
 Vue.use(Router)
 

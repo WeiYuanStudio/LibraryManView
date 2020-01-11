@@ -5,7 +5,9 @@
             </el-alert>
         </div>
         <div v-else id="infobar">
-            <img id="avatar" v-bind:src="userinfo.avatar"/>
+            <el-row justify="center">
+                <el-avatar shape="square" :size="100" :src="userinfo.avatar"></el-avatar>
+            </el-row>
             <div id="userinfobar">
                 <div id="username">Welcome back, {{ userinfo.name }}</div>
                 <div>{{ userinfo.email }}</div>
@@ -51,6 +53,7 @@ export default {
 #username {
     font-size: 1.5em;
     font-weight: 600;
+    user-select: none;
 }
 
 #avatar {
