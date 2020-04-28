@@ -8,6 +8,7 @@ import User from '@/views/PageUser'
 
 import PageSearch from '@/views/PageSearch'
 import PageLogin from '@/views/PageLogin'
+import PageRegister from '@/views/PageRegister'
 
 Vue.use(Router)
 
@@ -18,6 +19,7 @@ export default new Router({
         { path: '/favorite', component: PageFavorite },
         { path: '/user', component: User },
         { path: '/books', component: PageSearch },
-        { path: '/login', component: PageLogin}
+        { path: '/login', component: PageLogin},
+        { path: '/register', component: PageRegister}
     ]
 })

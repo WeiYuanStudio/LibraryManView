@@ -45,7 +45,7 @@ export default {
             });
         },
         register() {
-            window.alert('In progress');
+            this.$router.push('/register');
         }
     }
 };
