@@ -64,6 +64,13 @@ export default {
         register() {
             this.$router.push('/register');
         }
+    },
+    beforeMount() {
+        if (localStorage.Authorization != undefined) {
+            axios.defaults.headers.common['Authorization'] = localStorage.Authorization;
+            console.log('Found local storage Authorization');
+            this.$router.push('/user');
+        }
     }
 };
 </script>

@@ -11,7 +11,9 @@
                 </el-row>
                 <div id="userinfobar">
                     <div id="username">Welcome, {{ userName }}</div>
-                    <div>{{ mail }}</div>
+                    <div>邮箱：{{ mail }}，UID：{{ uid }}</div>
+                    <div>书币： {{ bookCoin }}</div>
+                    <div>用户组：{{ userGroup }}</div>
                 </div>
                 <el-col>
                     <el-card v-for="(menuItem, index) in menu" class="nav-card" shadow="never" :key="index">
@@ -25,6 +27,7 @@
 
 <script>
 import axios from 'axios'
+
 export default {
     data: function() {
         return {
@@ -59,7 +62,7 @@ export default {
         }
     },
     methods: {
-        get_userinfo() {
+        get_userinfo: function () {
             axios
                 .get('/api/my')
                 .then((response) => {
