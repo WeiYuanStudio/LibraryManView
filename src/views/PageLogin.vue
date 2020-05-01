@@ -31,18 +31,35 @@ export default {
         login() {
             axios({
                 method: "post",
-                url: "/api/login",
+                url: "/api/sessions",
                 data: {
-                    username: this.username,
+                    userName: this.username,
                     password: this.password
                 }
             }).then(function(response) {
-                document.cookie = 'session=' + response.data; //Fix cookie set
-                this.$router.push('/user');
+                if (response.data.statusCode == 200) {
+                    localStorage.Authorization = response.data.session;
+                    this.$alert('登录成功啦🎉，现在带你去首页~', '登录成功', {
+                        confirmButtonText: '确定',
+                        callback: () => {
+                            this.$router.push('/user');
+                        }
+                    });
+                } else {
+                    this.$alert(response.data.message, '登录失败', {
+                        confirmButtonText: '确定'
+                    });
+                }
             }.bind(this)).catch(function (error) {
                 window.console.log(error)
-                window.alert('Login Failed');
+                this.$alert('未知错误，请联系开发者', error, {
+                        confirmButtonText: '确定',
+                        callback: () => {
+                            this.$router.push('/');
+                        }
+                    });
             });
+            axios.defaults.headers.common['Authorization'] = localStorage.Authorization;
         },
         register() {
             this.$router.push('/register');
