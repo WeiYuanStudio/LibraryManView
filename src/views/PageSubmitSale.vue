@@ -3,6 +3,14 @@
         <el-page-header class="page-head" @back="$router.go(-1)" content="发布资源">
         </el-page-header>
         <el-form class="form" ref="form" :model="form" label-width="20vw">
+            <el-form-item label="搜索书名">
+                <el-autocomplete
+                    v-model="searchname"
+                    :fetch-suggestions="querySearchAsync"
+                    placeholder="通过选择书名设置bid"
+                    @select="handleSelect"
+                ></el-autocomplete>
+            </el-form-item>
             <el-form-item label="bid">
                 <el-input v-model="form.bid"></el-input>
             </el-form-item>
@@ -29,6 +37,7 @@ import axios from 'axios';
 export default {
     data: function() {
         return {
+            searchname: '',
             form: {
                 bid: '',
                 price: '',
@@ -61,6 +70,24 @@ export default {
                         confirmButtonText: '确定'
                 });
             }.bind(this));
+        },
+        querySearchAsync: function(queryString, cb) {
+            axios
+            .get(('/api/books'), {params: {title: queryString}})
+            .then(response => {
+                let showList = []
+                response.data.forEach(element => {
+                    let item = {
+                        value: element.title + ', author: ' + element.author,
+                        bid: element.bid
+                    }
+                    showList.push(item);
+                });
+                cb(showList)
+            })
+        },
+        handleSelect: function(selectItem) {
+            this.form.bid = selectItem.bid; //自动填充表单bid
         }
     }
 };
