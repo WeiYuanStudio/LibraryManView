@@ -54,7 +54,7 @@ export default {
                 },
                 {
                     title: '发布资源',
-                    link: ''
+                    link: '/user/submit-sale'
                 },
                 {
                     title: '问题反馈',
@@ -74,7 +74,7 @@ export default {
                     this.mail = response.data.mail;
                     this.avatarLink = response.data.avatar;
                     this.userGroup = response.data.userGroup;
-                }).bind(this)
+                })
         },
         to_login: function() {
             this.$router.push('/login')

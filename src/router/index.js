@@ -9,6 +9,8 @@ import User from '@/views/PageUser'
 import PageSearch from '@/views/PageSearch'
 import PageLogin from '@/views/PageLogin'
 import PageRegister from '@/views/PageRegister'
+import PageSubmitBook from '@/views/PageSubmitBook'
+import PageSubmitSale from '@/views/PageSubmitSale'
 
 Vue.use(Router)
 
@@ -20,6 +22,8 @@ export default new Router({
         { path: '/user', component: User },
         { path: '/books', component: PageSearch },
         { path: '/login', component: PageLogin},
-        { path: '/register', component: PageRegister}
+        { path: '/register', component: PageRegister},
+        { path: '/user/submit-book', component: PageSubmitBook },
+        { path: '/user/submit-sale', component: PageSubmitSale }
     ]
 })
