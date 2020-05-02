@@ -16,9 +16,11 @@
                     <div>用户组：{{ userGroup }}</div>
                 </div>
                 <el-col>
-                    <el-card v-for="(menuItem, index) in menu" class="nav-card" shadow="never" :key="index">
-                        {{ menuItem.title }}
-                    </el-card>
+                    <div v-for="(menuItem, index) in menu" :key="index" v-on:click="$router.push(menuItem.link)">
+                        <el-card class="nav-card" shadow="never">
+                            {{ menuItem.title }}
+                        </el-card>
+                    </div>
                 </el-col>
             </el-col>
         </div>
@@ -48,7 +50,7 @@ export default {
                 },
                 {
                     title: '提交书籍信息',
-                    link: ''
+                    link: '/user/submit-book'
                 },
                 {
                     title: '发布资源',
@@ -62,7 +64,7 @@ export default {
         }
     },
     methods: {
-        get_userinfo: function () {
+        get_userinfo: function() {
             axios
                 .get('/api/my')
                 .then((response) => {
@@ -74,7 +76,7 @@ export default {
                     this.userGroup = response.data.userGroup;
                 }).bind(this)
         },
-        to_login() {
+        to_login: function() {
             this.$router.push('/login')
         }
     },
