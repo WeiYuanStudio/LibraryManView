@@ -7,8 +7,8 @@
             <ul id="book-ulist">
                 <li v-for="(book, index) in books" :key="index">
                     <el-card>
-                        <router-link class="bookinfo-panel" :to="{path: '/bookinfo', query: {isbn: book.isbn}}">
-                            <el-image style="width: 100px; height: 100px" :src="book.cover_img" :fit="fit"/>
+                        <router-link class="bookinfo-panel" :to="{path: '/bookinfo', query: {bid: book.bid}}">
+                            <el-image style="width: 100px; height: 100px" :src="book.coverImg" :fit="fit"/>
                             <div class="info-misc">
                                 <h3>{{ book.title }}</h3>
                                 <div>{{ book.publisher }}</div>
